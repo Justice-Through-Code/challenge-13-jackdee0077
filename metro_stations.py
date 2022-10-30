@@ -50,8 +50,8 @@ class SubwayStation(MetroStation):
     def show_info(self):
         super().show_info()
         self.diplay_lines()
-    def display_lines(self):
-        print(f"the line stops here;{self.lines}")
+    def diplay_lines(self):
+        print(f'The following lines stop here: {self.lines}')
 
 
 
@@ -87,12 +87,15 @@ class BusStation(MetroStation):
     def add_route(self,route):
         self.routes.append(route)
     def remove_route(self,route):
-        self.routes.remove(route)
+        try:
+            self.routes.remove(route)
+        except ValueError:
+            return    
     def show_info(self):
         super().show_info()
         self.displayroutes()
-    def display_routes(self):
-        print(f"the line stops here;{self.lines}")
+    def displayroutes(self):
+        print(f'The following lines stop here: {self.routes}')
         
 
 
@@ -107,4 +110,6 @@ class BusStation(MetroStation):
 # location: '34th street and 12th avenue'
 # routes: ['Boston', 'DC', 'Philly']
 bus_station = BusStation('NYC Megabus Stop','34th street and 12th avenue',['Boston', 'DC', 'Philly'])
+bus_station.show_info()
+bus_station.close_station()
 bus_station.show_info()
