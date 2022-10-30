@@ -89,10 +89,9 @@ class BusStation(MetroStation):
     def remove_route(self,route):
         self.routes.remove(route)
     def show_info(self):
-        open = "open"
         super().show_info()
-        self.displayroutes
-    def display_lines(self):
+        self.displayroutes()
+    def display_routes(self):
         print(f"the line stops here;{self.lines}")
         
 
