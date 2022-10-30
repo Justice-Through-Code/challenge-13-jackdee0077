@@ -6,7 +6,7 @@ Use OOP and inheritance to design subway and bus stations.
 """
 DO NOT EDIT THE MetroStation CLASS
 """
-from numpy import append
+
 
 
 class MetroStation:
